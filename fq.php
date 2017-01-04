@@ -14,8 +14,8 @@ function get_hosts()
     if(DEBUG)
         return file_get_contents('hosts.txt');
     $curl = new \Curl\Curl();
+    $curl->setTimeout(1000);
     $curl->get('https://raw.githubusercontent.com/racaljk/hosts/master/hosts');
-    $curl->setOpt(CURLOPT_SSL_VERIFYPEER,false);
     if ($curl->error) {
         echo 'Error: ' . $curl->errorCode . ': ' . $curl->errorMessage . "\n";
         exit;
