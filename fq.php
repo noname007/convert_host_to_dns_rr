@@ -7,7 +7,7 @@
  */
 require __DIR__.'/vendor/autoload.php';
 
-const DEBUG = true;
+const DEBUG = false;
 
 function get_hosts()
 {
